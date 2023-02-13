@@ -1,0 +1,11 @@
+_api_service_one:
+  prefix: /one
+  resource: one/settings.yaml
+
+_api_service_two:
+  prefix: /two
+  resource: two/settings.yaml
+
+_api_service_three:
+  prefix: /three
+  resource: three/settings.yaml

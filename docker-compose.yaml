@@ -1,0 +1,42 @@
+version: '3.0'
+
+networks:
+  test-project-network:
+
+services:
+  nginx-service:
+    image: nginx:latest
+    container_name: nginx-container
+    ports:
+      - "80:80"
+    volumes:
+      - './public:/var/www/test_project/public'
+      - './docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro'
+    depends_on:
+      - php74-service
+    networks:
+      - test-project-network
+
+  php74-service:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    container_name: php74-container
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/var/www/test_project
+    depends_on:
+      - wiremock-service
+    networks:
+      - test-project-network
+
+  wiremock-service:
+    image: wiremock/wiremock:2.33.2
+    container_name: wiremock-service
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    networks:
+      - test-project-network
+

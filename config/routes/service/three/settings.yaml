@@ -1,0 +1,9 @@
+service_three_get_settings:
+  path: /settings
+  controller: App\Controller\ServiceThree\SettingsController::getSettings
+  methods: [GET]
+
+service_three_update_settings:
+  path: /settings
+  controller: App\Controller\ServiceThree\SettingsController::updateSettings
+  methods: [PUT]

@@ -1,0 +1,4 @@
+#!/bin/bash
+curl -X POST http://localhost:8080/__admin/mappings -H 'Content-Type: application/json' -d '{"name": "Заглушка для \"Service One\"","request": {"method": "GET","url": "/service/one/setting"},"response": {"status": 200,"body": "{\"field1\": \"field1\",\"field2\": false,\"field3\": [\"field3.one\",\"field3.two\",\"field3.two\"]}","headers": {"Content-Type": "application/json"}}}'
+
+curl -X POST http://localhost:8080/__admin/mappings -H 'Content-Type: application/json' -d '{"name": "Заглушка для \"Service One\"","request": {"method": "PUT","url": "/service/one/setting"},"response": {"status": 200,"body": "{\"field1\": \"field1\",\"field2\": false,\"field3\": [\"field3.one\",\"field3.two\",\"field3.two\"]}","headers": {"Content-Type": "application/json"}}}'

@@ -1,0 +1,9 @@
+service_one_get_settings:
+  path: /settings
+  controller: App\Controller\ServiceOne\SettingsController::getSettings
+  methods: [GET]
+
+service_one_update_settings:
+  path: /settings
+  controller: App\Controller\ServiceOne\SettingsController::updateSettings
+  methods: [PUT]

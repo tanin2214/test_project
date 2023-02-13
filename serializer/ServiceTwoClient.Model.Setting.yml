@@ -1,0 +1,11 @@
+App\ServiceOneClient\Model\Setting:
+    properties:
+        filed1:
+            type: string
+            serialized_name: filed_1
+        field2:
+            type: bool
+            serialized_name: filed_2
+        field3:
+            type: array<integer>
+            serialized_name: filed_3

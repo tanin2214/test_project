@@ -1,0 +1,20 @@
+jms_serializer:
+    default_context:
+        serialization:
+            serialize_null: true
+    property_naming:
+        id: 'jms_serializer.identical_property_naming_strategy'
+    metadata:
+        auto_detection: true
+        directories:
+            OperationCenter:
+                namespace_prefix: "App"
+                path: "%kernel.project_dir%/serializer"
+
+services:
+    jms_serializer.object_constructor:
+        alias: jms_serializer.initialized_object_constructor
+
+    jms_serializer.initialized_object_constructor:
+        class: App\Service\Serialization\InitializedObjectConstructor
+        arguments: ["@jms_serializer.unserialize_object_constructor"]

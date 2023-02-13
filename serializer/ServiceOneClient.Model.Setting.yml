@@ -1,0 +1,8 @@
+App\ServiceOneClient\Model\Setting:
+    properties:
+        filed1:
+            type: strict_string
+        field2:
+            type: bool
+        field3:
+            type: array<string>
