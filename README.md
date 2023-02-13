@@ -10,6 +10,7 @@ GET http://localhost/service/one/settings - получение настроек 
 
 
 PUT http://localhost/service/one/settings - обновление настроек сервиса "ServiceOne"
+
 BODY:
 {
     "field1": "field",
